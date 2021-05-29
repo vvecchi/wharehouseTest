@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{product.name}}</h1>
+<table class="parts-table">
+    <tr><td>Article</td><td>Quantity</td><td></td></tr>
+    {% for part in  parts %}
+    <tr><td>{{part.article.name}}</td><td>{{part.amount_of}}</td>
+    {%endfor%}
+</table>
+<a href="{% url 'products' %}">back</a>
+{% endblock %}

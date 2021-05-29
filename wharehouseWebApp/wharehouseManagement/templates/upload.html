@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+    <h1>Upload</h1>
+    <form action="{{form_action}}" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <input type="file" name="file">
+        <input type="submit">
+    </form>
+    {% endif %}
+{% endblock %}
+  

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Products</h1>
+<table class="product-table">
+    <tr><td>Product</td><td>Quantity</td><td></td></tr>
+    {%for product in products%}
+    <tr>
+        <td><a href="{% url 'product' product.id %}">{{product.name}}</a></td>
+        <td>{{product.quantity}}</td>
+        <td>
+            {% if user.is_authenticated %}
+                {% if product.quantity > 0 %} 
+                <form action="{% url 'remove_product' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="{{product.id}}"/>
+                    <input type="submit" class="--bt-remove-product" value="Sell"/>
+                </form>
+                {% endif %}
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'js/products.js' %}"></script>
+{% endblock %}
