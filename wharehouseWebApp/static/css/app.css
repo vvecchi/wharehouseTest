@@ -25,6 +25,10 @@ h1 {
     padding: 12px 15px;
 }
 
+.product-table td:last-child {
+    text-align: right ;
+}
+
 .product-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
@@ -41,9 +45,14 @@ h1 {
     text-align: right;
 }
 
+.product-table a {
+    color: #777;
+}
+
 a {
     display: inline-block;
     position: relative;
+    color: #555;
 }
 
 a:link {
@@ -55,28 +64,36 @@ a:hover {
 }
 
 footer {
-    font-size: x-small;
+    font-size: small;
     position: absolute;
+    right: 0;
+    left: 0;
     bottom: 0;
-    width: 100%;
     color: #3D81B3;
-    background: #f8db49;
-    height: 50px;
+    background: #FFF6BF;
 }
 
 footer div {    
     text-align: right;
-    padding-top: 5px;
+    padding: 5px;
 }
 
 header div {
     text-align: right;
+    padding: 5px;
 }
 
 header {
-    width: 100%;
     color: #5a89c5;
-    background: #f8db49;
-    height: 25px;
+    background: #FFF6BF;
 }
 
+.product-table input[type=submit] {
+    padding:5px 15px; 
+    background:#3D81B3;
+    color: #F2F2F2;
+    border:0 outset;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
