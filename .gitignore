@@ -160,8 +160,11 @@ Thumbs.db
 
 
 # End of https://www.toptal.com/developers/gitignore/api/django
+migrations/
 
 .vscode
 pyvenv.cfg
 bin/
 lib/
+data/
+Assignment.md

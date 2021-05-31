@@ -5,6 +5,7 @@ from .models import PartsAmount
 from .parsejson import parse_inventory
 from .parsejson import parse_products
 from . import views
+from django.test import Client
 
 
 INVENTORY_FILENAME = 'wharehouseManagement/testData/inventory.json'
@@ -20,6 +21,16 @@ def read_inventory(): read_data(INVENTORY_FILENAME, parse_inventory)
 
 
 def read_products(): read_data(PRODUCTS_FILENAME, parse_products)
+
+
+def load_data():
+    read_inventory()
+    read_products()
+
+class LoadedDataTests(TestCase):
+    def setUp(self) -> None:
+        load_data()
+
 
 
 class ReadFileTests(TestCase):
@@ -44,11 +55,8 @@ class ReadFileTests(TestCase):
         read_inventory()
         self.assertEqual(leg, Article.objects.get(art_id=1))
 
-class ProductTests(TestCase):
-    def setUp(self):
-        read_inventory()
-        read_products()
-        
+class ProductTests(LoadedDataTests):
+       
     def test_availbility(self):
         dining_chair = Product.objects.get(name='Dining Chair')
         self.assertEquals(dining_chair.quantity, 2)
@@ -71,5 +79,9 @@ class ProductTests(TestCase):
             dining_chair.remove()
         with self.assertRaises(Exception) as context:
             dining_chair.remove()
-        
-        
+
+
+class ViewTest(LoadedDataTests):
+
+    def test_logged_view_allows_selling(self):
+        pass

@@ -3,11 +3,13 @@
 {% block content %}
 <h1>Products</h1>
 <table class="product-table">
-    <tr><td>Product</td><td>Quantity</td><td></td></tr>
+    <thead>
+    <tr><th>Product</th><th class="number">Quantity</th><th></th></tr>
+    </thead>
     {%for product in products%}
     <tr>
-        <td><a href="{% url 'product' product.id %}">{{product.name}}</a></td>
-        <td>{{product.quantity}}</td>
+        <th><a href="{% url 'product' product.id %}">{{product.name}}</a></th>
+        <td class="number">{{product.quantity}}</td>
         <td>
             {% if user.is_authenticated %}
                 {% if product.quantity > 0 %} 

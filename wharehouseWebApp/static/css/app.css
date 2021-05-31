@@ -1,0 +1,82 @@
+html {
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+h1 {
+    font-size: 16px;
+}
+
+.product-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-table thead tr {
+    background-color: #3D81B3;
+    color: #F2F2F2;
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px 15px;
+}
+
+.product-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.product-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.product-table tbody tr:last-of-type {
+    border-bottom: 2px solid #3D81B3;
+}
+
+.product-table .number {
+    text-align: right;
+}
+
+a {
+    display: inline-block;
+    position: relative;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    font-size: x-small;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #3D81B3;
+    background: #f8db49;
+    height: 50px;
+}
+
+footer div {    
+    text-align: right;
+    padding-top: 5px;
+}
+
+header div {
+    text-align: right;
+}
+
+header {
+    width: 100%;
+    color: #5a89c5;
+    background: #f8db49;
+    height: 25px;
+}
+

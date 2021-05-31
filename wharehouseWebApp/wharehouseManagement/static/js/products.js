@@ -2,7 +2,7 @@
 $(".bt-remove-product").on("click", function () {
     var product_id = $(this).val();
     console.log(product_id)
-    $.ajax({
+    $.load({
         url: '/remove_product/',
         data: {
           'product_id': product_id
